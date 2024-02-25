@@ -71,7 +71,15 @@ const DishItem = (props: DishItemProps) => {
                     >
                         <MenuItem value={-1}>---</MenuItem>
                         {dishes.map((item) => (
-                            <MenuItem value={item.id} key={item.id}>
+                            <MenuItem
+                                value={item.id}
+                                key={item.id}
+                                disabled={
+                                    !!submitDishItem.find(
+                                        (sdi) => sdi.id === item.id,
+                                    )
+                                }
+                            >
                                 {item.name}
                             </MenuItem>
                         ))}

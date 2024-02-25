@@ -53,6 +53,11 @@ const RootProvider = (props: Props) => {
             'Dishes: ',
             submitDishItem.map((item) => `${item.name} - ${item.numOfServing}`),
         );
+        setNotification({
+            message: 'Submit successfully',
+            severity: 'success',
+        });
+        return;
     };
 
     const onGoNext = () => {
@@ -92,6 +97,23 @@ const RootProvider = (props: Props) => {
         const totalNumOfServing = submitDishItem.reduce((acc, cur) => {
             return (acc += cur.numOfServing);
         }, 0);
+
+        if (submitDishItem.find((item) => !item.id)) {
+            setNotification({
+                message: 'Please select all dish options!',
+                severity: 'error',
+            });
+            return;
+        }
+
+        if (submitDishItem.find((item) => item.numOfServing < 1)) {
+            setNotification({
+                message: 'The number of serving must be positive!',
+                severity: 'error',
+            });
+            return;
+        }
+
         if (totalNumOfServing > 10) {
             setNotification({
                 message: 'The total number of dishes must be maximum 10',
@@ -107,6 +129,7 @@ const RootProvider = (props: Props) => {
             });
             return;
         }
+
         setStep((prev) => prev + 1);
     };
 

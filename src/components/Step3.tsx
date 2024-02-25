@@ -24,13 +24,15 @@ const Step3 = () => {
     }, [mealSelect, restaurantSelect]);
 
     return (
-        <Grid container spacing={2} sx={{ mt: 4 }}>
+        <Grid container spacing={2} sx={{ my: 4 }}>
             {submitDishItem.map((item) => (
                 <DishItem key={item.index} dishes={dishList} item={item} />
             ))}
-            <IconButton onClick={addMoreSubmitDishItem} sx={{ my: 2 }}>
-                <AddCircleOutlineRounded fontSize="large" />
-            </IconButton>
+            {submitDishItem.length < dishList.length && (
+                <IconButton onClick={addMoreSubmitDishItem} sx={{ my: 2 }}>
+                    <AddCircleOutlineRounded fontSize="large" />
+                </IconButton>
+            )}
         </Grid>
     );
 };
