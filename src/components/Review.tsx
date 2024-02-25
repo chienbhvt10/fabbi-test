@@ -1,9 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import useRootContext from '../hooks/useRootContext';
 
-interface ReviewProps {}
-
-const Review = (props: ReviewProps) => {
+const Review = () => {
     const { mealSelect, numOfPeople, restaurantSelect, submitDishItem } =
         useRootContext();
 

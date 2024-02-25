@@ -1,4 +1,4 @@
-import { object, array, number, ValidationError, string } from 'yup';
+import { array, number, object, string } from 'yup';
 import { Dish } from '../types';
 
 export interface ValueStep1 {

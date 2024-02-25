@@ -5,9 +5,7 @@ import DishItem from './DishItem';
 import { dishes } from '../utils/data';
 import { useMemo } from 'react';
 
-interface Step3Props {}
-
-const Step3 = (props: Step3Props) => {
+const Step3 = () => {
     const {
         mealSelect,
         restaurantSelect,

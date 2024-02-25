@@ -10,15 +10,12 @@ import { restaurant } from '../utils/data';
 import { useMemo } from 'react';
 import { MEAL } from '../constants';
 
-interface Step2Props {}
-
-const Step2 = (props: Step2Props) => {
+const Step2 = () => {
     const {
         mealSelect,
         restaurantSelect,
         setRestaurantSelectState,
         setSubmitDishItemState,
-        submitDishItem,
     } = useRootContext();
 
     const restaurantList = useMemo(() => {

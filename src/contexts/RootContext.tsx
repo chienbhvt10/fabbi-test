@@ -67,7 +67,7 @@ const RootProvider = (props: Props) => {
                 meal: mealSelect,
                 numOfPeople,
             })
-            .then((value) => {
+            .then(() => {
                 setStep((prev) => prev + 1);
             })
             .catch((err: ValidationError) => {
@@ -80,7 +80,7 @@ const RootProvider = (props: Props) => {
             .validate({
                 restaurant: restaurantSelect,
             })
-            .then((value) => {
+            .then(() => {
                 setStep((prev) => prev + 1);
             })
             .catch((err: ValidationError) => {

@@ -10,9 +10,7 @@ import { ChangeEventHandler } from 'react';
 import useRootContext from '../hooks/useRootContext';
 import { mealData } from '../utils/data';
 
-interface Step1Props {}
-
-const Step1 = (props: Step1Props) => {
+const Step1 = () => {
     const {
         mealSelect,
         numOfPeople,
